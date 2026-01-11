@@ -5,12 +5,8 @@ import CustomCursor from '@/components/CustomCursor';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
-export async function generateStaticParams() {
-  const categories = await getCategories();
-  return categories.map((category) => ({
-    category: category.name,
-  }));
-}
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export default async function CategoryPage({ params }: { params: Promise<{ category: string }> }) {
   const { category } = await params;
