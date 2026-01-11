@@ -16,7 +16,11 @@ export default function Noorderpoort() {
       <CustomCursor />
       <Header />
 
-      <div className="pt-32 px-4 md:px-12 flex flex-col items-center justify-center min-h-[80vh]">
+      <div
+        id="main-content"
+        tabIndex={-1}
+        className="pt-32 px-4 md:px-12 flex flex-col items-center justify-center min-h-[80vh] outline-none"
+      >
         <h1 className="text-4xl md:text-6xl font-bold uppercase mb-16 tracking-tighter text-center">
             Noorderpoort
         </h1>

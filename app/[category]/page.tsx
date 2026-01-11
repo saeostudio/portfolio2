@@ -24,7 +24,11 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
       <CustomCursor />
       <Header />
 
-      <div id="main-content" className="pt-24 px-4 md:px-12">
+      <div
+        id="main-content"
+        tabIndex={-1}
+        className="pt-24 px-4 md:px-12 outline-none"
+      >
         <h1 className="text-4xl md:text-6xl font-bold uppercase mb-12 tracking-tighter">{data.name}</h1>
 
         <div className="space-y-24">

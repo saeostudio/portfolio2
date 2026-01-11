@@ -15,7 +15,11 @@ export default async function SubjectPage({ params }: { params: Promise<{ subjec
       <CustomCursor />
       <Header />
 
-      <div className="pt-32 px-4 md:px-12">
+      <div
+        id="main-content"
+        tabIndex={-1}
+        className="pt-32 px-4 md:px-12 outline-none"
+      >
         <div className="flex items-baseline gap-4 mb-12">
             <Link href="/noorderpoort" className="text-xl hover:underline">← Back</Link>
             <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter">{decodedSubject}</h1>

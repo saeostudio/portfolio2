@@ -28,7 +28,7 @@ export default async function Home() {
       <CustomCursor />
       <Header />
 
-      <div id="main-content">
+      <div id="main-content" tabIndex={-1} className="outline-none">
         <MasonryGrid>
           {sortedCategories.map((category) => (
             <Link

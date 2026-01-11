@@ -9,7 +9,8 @@ export default function Contact() {
 
       <div
         id="main-content"
-        className="pt-32 px-4 md:px-12 flex flex-col justify-center min-h-[80vh]"
+        tabIndex={-1}
+        className="pt-32 px-4 md:px-12 flex flex-col justify-center min-h-[80vh] outline-none"
       >
         <h1 className="text-4xl md:text-6xl font-bold uppercase mb-12 tracking-tighter">Contact</h1>
 

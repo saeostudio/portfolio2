@@ -8,7 +8,11 @@ export default function About() {
       <CustomCursor />
       <Header />
 
-      <div className="pt-32 px-4 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div
+        id="main-content"
+        tabIndex={-1}
+        className="pt-32 px-4 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 outline-none"
+      >
         <div>
             <Image
                 src="https://picsum.photos/600/800" // Placeholder for Stefan's photo
