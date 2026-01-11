@@ -1,7 +1,7 @@
 import { getCategory, getCategories } from '@/lib/gallery';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import CustomCursor from '@/components/CustomCursor';
-import MasonryGrid from '@/components/MasonryGrid';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
@@ -21,40 +21,45 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
   }
 
   return (
-    <main className="min-h-screen pb-12">
+    <main className="min-h-screen p-8 md:p-16">
       <CustomCursor />
       <Header />
 
-      <div className="pt-24 px-4 md:px-12">
-        <h1 className="text-4xl md:text-6xl font-bold uppercase mb-12 tracking-tighter">{data.name}</h1>
-
-        <div className="space-y-24">
-            {data.projects.map((project) => (
-                <div key={project.name}>
-                    <h2 className="text-2xl uppercase tracking-widest mb-6 border-b border-black pb-2 inline-block">
-                        {project.name}
-                    </h2>
-                    <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
-                        {project.images.map((img) => (
-                            <div key={img.src} className="relative w-full">
-                                <Image
-                                    src={img.src}
-                                    alt={img.name}
-                                    width={800}
-                                    height={1000}
-                                    className="w-full h-auto object-contain"
-                                />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            ))}
-        </div>
-
-        {data.projects.length === 0 && (
-            <p>No photos found in this category.</p>
-        )}
+      <div className="mt-40 mb-20">
+        <h1 className="text-[8vw] md:text-[6vw] font-extrabold uppercase leading-none tracking-tighter text-white">
+            {data.name}
+        </h1>
       </div>
+
+      <div className="space-y-32">
+        {data.projects.map((project) => (
+            <div key={project.name}>
+                <h2 className="text-xl md:text-2xl font-syne uppercase tracking-widest mb-8 border-b border-white/20 pb-2 inline-block text-white">
+                    {project.name}
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {project.images.map((img) => (
+                        <div key={img.src} className="relative w-full mb-8">
+                             {/* Keep the images clean, full width in their column */}
+                            <Image
+                                src={img.src}
+                                alt={img.name}
+                                width={800}
+                                height={1000}
+                                className="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                            />
+                        </div>
+                    ))}
+                </div>
+            </div>
+        ))}
+      </div>
+
+      {data.projects.length === 0 && (
+        <p className="text-white/50">No photos found in this category.</p>
+      )}
+
+      <Footer />
     </main>
   );
 }

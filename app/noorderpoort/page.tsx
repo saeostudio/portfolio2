@@ -1,4 +1,5 @@
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import CustomCursor from '@/components/CustomCursor';
 import Link from 'next/link';
 
@@ -12,27 +13,29 @@ const SUBJECTS = [
 
 export default function Noorderpoort() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen p-8 md:p-16">
       <CustomCursor />
       <Header />
 
-      <div className="pt-32 px-4 md:px-12 flex flex-col items-center justify-center min-h-[80vh]">
-        <h1 className="text-4xl md:text-6xl font-bold uppercase mb-16 tracking-tighter text-center">
-            Noorderpoort
+      <div className="min-h-[60vh] flex flex-col justify-center items-center mt-20">
+        <h1 className="text-[8vw] font-extrabold uppercase leading-[0.85] tracking-tighter text-white mb-20 text-center">
+            NOORDER<br/>POORT
         </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-4xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-5xl">
             {SUBJECTS.map((subject) => (
                 <Link
                     key={subject}
                     href={`/noorderpoort/${subject}`}
-                    className="border-2 border-black p-8 text-center text-xl uppercase tracking-widest hover:bg-black hover:text-white transition-colors duration-300"
+                    className="border border-white/20 p-12 text-center text-xl font-syne uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300"
                 >
                     {subject}
                 </Link>
             ))}
         </div>
       </div>
+
+      <Footer />
     </main>
   );
 }

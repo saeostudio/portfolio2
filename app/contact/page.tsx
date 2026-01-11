@@ -1,29 +1,37 @@
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 import CustomCursor from '@/components/CustomCursor';
 
 export default function Contact() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen p-8 md:p-16">
       <CustomCursor />
       <Header />
 
-      <div className="pt-32 px-4 md:px-12 flex flex-col justify-center min-h-[80vh]">
-        <h1 className="text-4xl md:text-6xl font-bold uppercase mb-12 tracking-tighter">Contact</h1>
+      <div className="min-h-[70vh] flex flex-col justify-center">
+        <h1 className="text-[10vw] font-extrabold uppercase leading-[0.85] tracking-tighter text-white mb-20">
+            GET IN<br/><span className="pl-[10vw]">TOUCH</span>
+        </h1>
 
-        <div className="space-y-6 text-2xl uppercase tracking-widest">
-            <p>
-                <a href="mailto:info@stefanland.nl" className="hover:underline">info@stefanland.nl</a>
-            </p>
-            <p>
-                <a href="https://instagram.com/stefanland" target="_blank" rel="noopener noreferrer" className="hover:underline">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 font-syne text-2xl uppercase tracking-widest text-white">
+            <div className="space-y-4">
+                <p className="opacity-50 text-sm tracking-[0.2em] font-sans mb-4">Email</p>
+                <a href="mailto:info@stefanland.nl" className="block hover:line-through decoration-white">info@stefanland.nl</a>
+            </div>
+            <div className="space-y-4">
+                 <p className="opacity-50 text-sm tracking-[0.2em] font-sans mb-4">Social</p>
+                <a href="https://instagram.com/stefanland" target="_blank" rel="noopener noreferrer" className="block hover:line-through decoration-white">
                     Instagram
                 </a>
-            </p>
-            <p>
-                +31 6 1234 5678
-            </p>
+            </div>
+            <div className="space-y-4">
+                 <p className="opacity-50 text-sm tracking-[0.2em] font-sans mb-4">Phone</p>
+                <p>+31 6 1234 5678</p>
+            </div>
         </div>
       </div>
+
+      <Footer />
     </main>
   );
 }
