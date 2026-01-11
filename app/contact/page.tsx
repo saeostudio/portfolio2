@@ -7,7 +7,10 @@ export default function Contact() {
       <CustomCursor />
       <Header />
 
-      <div className="pt-32 px-4 md:px-12 flex flex-col justify-center min-h-[80vh]">
+      <div
+        id="main-content"
+        className="pt-32 px-4 md:px-12 flex flex-col justify-center min-h-[80vh]"
+      >
         <h1 className="text-4xl md:text-6xl font-bold uppercase mb-12 tracking-tighter">Contact</h1>
 
         <div className="space-y-6 text-2xl uppercase tracking-widest">

@@ -1,7 +1,6 @@
 import { getCategory, getCategories } from '@/lib/gallery';
 import Header from '@/components/Header';
 import CustomCursor from '@/components/CustomCursor';
-import MasonryGrid from '@/components/MasonryGrid';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
@@ -25,7 +24,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
       <CustomCursor />
       <Header />
 
-      <div className="pt-24 px-4 md:px-12">
+      <div id="main-content" className="pt-24 px-4 md:px-12">
         <h1 className="text-4xl md:text-6xl font-bold uppercase mb-12 tracking-tighter">{data.name}</h1>
 
         <div className="space-y-24">
