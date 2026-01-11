@@ -1,47 +1,55 @@
-# How to Update Your Portfolio Photos
+# How to Manage Your Photos
 
-This website is designed to be updated easily by dragging and dropping files. You do not need to touch the code to add photos.
+## 1. Where do I put photos?
+All your content lives in the `public/photos` folder.
+Inside that folder, you should see these specific Category folders:
+*   `Commissioned`
+*   `Personal Projects`
+*   `Fashion`
+*   `Portrait`
+*   `Travel`
+*   `Analogue`
+*   `Miscellaneous`
 
-## The Structure
-
-Your photos live in the `public/photos` folder. The structure is:
-
-`public/photos` -> `[Category Name]` -> `[Project Name]` -> `[Image Files]`
-
-### Example:
-`public/photos/Fashion/Summer Collection/shoot1.jpg`
-
-- **Category Name:** `Fashion` (This determines which page the photos appear on)
-- **Project Name:** `Summer Collection` (This becomes the title/caption above the group of photos)
-- **Image Files:** The actual photos.
+> **Note:** Do not rename these Category folders, or the website design will break.
 
 ---
 
-## How to Add New Photos
+## 2. How to Add a New Project
+To add a new set of photos (e.g., "Paris Trip" inside "Travel"):
 
-1.  **Open the Project Folder** on your computer.
-2.  Navigate to `public/photos`.
-3.  **Choose a Category** (e.g., `Commissioned`, `Travel`).
-4.  **Create a New Folder** for your project (e.g., inside `Commissioned`, create a folder named `Vogue Shoot`).
-    *   *Note:* The name of this folder will be displayed as the title on the website.
-5.  **Drop your images** into that project folder.
-    *   Supported formats: `.jpg`, `.jpeg`, `.png`, `.webp`.
+1.  Open the **Category** folder (e.g., `public/photos/Travel`).
+2.  **Create a New Folder** inside it. Name it whatever you want the title to be (e.g., `Paris Trip`).
+3.  **Drop your photos** into that new `Paris Trip` folder.
+    *   *Supported files:* JPG, PNG, WebP.
+    *   *Tip:* The website will order them alphabetically. Name them `01.jpg`, `02.jpg` to control the order.
 
-## How to Change the Homepage Cover Images
+**Correct Structure Example:**
+`public/photos/Travel/Paris Trip/photo1.jpg`
 
-The image you see on the Homepage for each category is automatically chosen.
-- It will pick the **first image** found inside the **first project** of that category.
-- To change it, simply ensure your favorite image is alphabetically first in the first project folder, or rename it (e.g., `01-cover.jpg`).
+---
 
-## Supported Categories
+## 3. "Why are they not showing up?"
 
-The website is built to display these specific categories in the grid:
-- `Commissioned`
-- `Personal Projects`
-- `Fashion`
-- `Portrait`
-- `Travel`
-- `Analogue`
-- `Miscellaneous` (Will appear at the bottom if added)
+### A. Are you looking at the live website?
+**Crucial:** Dragging files on your computer **does not** magically send them to the internet.
+*   **If you are developing locally:** You should see them immediately (refresh the page).
+*   **If you are checking your .com website:** You must **Publish/Deploy** your changes.
+    *   If you use GitHub + Vercel: You need to commit and push these new photo files to GitHub.
+    *   If you use a hosting provider: You need to upload the new files to your server.
 
-*Happy Curating!*
+### B. Is the folder empty?
+A project will not appear on the website until it has **at least one valid image** inside it.
+
+### C. Check the File Type
+Make sure your images are `.jpg`, `.jpeg`, `.png`, or `.webp`.
+(iPhone `.heic` files are often not supported by web browsers directly—convert them to JPG first).
+
+---
+
+## 4. How to Publish (If using GitHub)
+If you are using GitHub Desktop or command line to manage this site:
+1.  Add your photo files.
+2.  **Commit** the changes (Message: "Added Paris photos").
+3.  **Push** to the main branch.
+4.  Wait for your hosting (e.g., Vercel) to rebuild the site.

@@ -30,12 +30,14 @@ export async function getCategories(): Promise<Category[]> {
   }
 
   const categoryNames = fs.readdirSync(PHOTOS_DIR).filter((file) => {
+    // Ignore hidden files like .DS_Store
+    if (file.startsWith('.')) return false;
     return fs.statSync(path.join(PHOTOS_DIR, file)).isDirectory();
   });
 
   const categories = categoryNames.map((categoryName) => {
     const categoryPath = path.join(PHOTOS_DIR, categoryName);
-    const items = fs.readdirSync(categoryPath);
+    const items = fs.readdirSync(categoryPath).filter(item => !item.startsWith('.'));
 
     // We expect items to be mostly project directories, but maybe some loose images (legacy/simple support)
     // Structure: Category -> Project -> Images
@@ -54,6 +56,8 @@ export async function getCategories(): Promise<Category[]> {
                 images: projectImages.map(src => ({ src, name: path.basename(src) }))
             });
             allImagesInCategory = allImagesInCategory.concat(projectImages);
+        } else {
+             console.log(`[Portfolio] Empty project folder found: ${categoryName}/${item} (No images)`);
         }
       } else if (isImage(item)) {
         // Loose image in category folder, treat as "General" project or similar, or ignore if we enforce structure
