@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Syne } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
+import SkipLink from "@/components/SkipLink";
 import CustomCursor from "@/components/CustomCursor";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -20,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${syne.variable} font-sans antialiased`}>
+        <SkipLink />
         <div className="grain"></div>
         <CustomCursor />
         {children}
