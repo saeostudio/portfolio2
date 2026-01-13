@@ -17,7 +17,7 @@ export default function Noorderpoort() {
       <CustomCursor />
       <Header />
 
-      <div className="min-h-[60vh] flex flex-col justify-center items-center mt-20">
+      <div id="main-content" className="min-h-[60vh] flex flex-col justify-center items-center mt-20">
         <h1 className="text-[8vw] font-extrabold uppercase leading-[0.85] tracking-tighter text-white mb-20 text-center">
             NOORDER<br/>POORT
         </h1>
