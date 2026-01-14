@@ -17,7 +17,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
   }
 
   return (
-    <main className="min-h-screen p-8 md:p-16">
+    <main className="min-h-screen p-8 md:p-16" id="main-content">
       <CustomCursor />
       <Header />
 

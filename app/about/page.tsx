@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function About() {
   return (
-    <main className="min-h-screen p-8 md:p-16">
+    <main className="min-h-screen p-8 md:p-16" id="main-content">
       <CustomCursor />
       <Header />
 
