@@ -4,7 +4,7 @@ import CustomCursor from '@/components/CustomCursor';
 
 export default function Contact() {
   return (
-    <main className="min-h-screen p-8 md:p-16">
+    <main id="main-content" className="min-h-screen p-8 md:p-16">
       <CustomCursor />
       <Header />
 
