@@ -1,5 +1,4 @@
 import Header from '@/components/Header';
-import CustomCursor from '@/components/CustomCursor';
 import Link from 'next/link';
 
 // Placeholder for subject gallery.
@@ -11,8 +10,7 @@ export default async function SubjectPage({ params }: { params: Promise<{ subjec
   const decodedSubject = decodeURIComponent(subject);
 
   return (
-    <main className="min-h-screen">
-      <CustomCursor />
+    <main id="main-content" className="min-h-screen">
       <Header />
 
       <div className="pt-32 px-4 md:px-12">
