@@ -1,6 +1,5 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import CustomCursor from '@/components/CustomCursor';
 import Link from 'next/link';
 
 const SUBJECTS = [
@@ -13,8 +12,7 @@ const SUBJECTS = [
 
 export default function Noorderpoort() {
   return (
-    <main className="min-h-screen p-8 md:p-16">
-      <CustomCursor />
+    <main id="main-content" className="min-h-screen p-8 md:p-16">
       <Header />
 
       <div className="min-h-[60vh] flex flex-col justify-center items-center mt-20">
