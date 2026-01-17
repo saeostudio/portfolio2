@@ -1,4 +1,4 @@
-import { getCategory, getCategories } from '@/lib/gallery';
+import { getCategory } from '@/lib/gallery';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CustomCursor from '@/components/CustomCursor';
@@ -21,7 +21,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
       <CustomCursor />
       <Header />
 
-      <div className="mt-40 mb-20">
+      <div id="main-content" className="mt-40 mb-20">
         <h1 className="text-[8vw] md:text-[6vw] font-extrabold uppercase leading-none tracking-tighter text-white">
             {data.name}
         </h1>
