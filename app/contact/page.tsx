@@ -8,7 +8,7 @@ export default function Contact() {
       <CustomCursor />
       <Header />
 
-      <div className="min-h-[70vh] flex flex-col justify-center">
+      <div id="main-content" className="min-h-[70vh] flex flex-col justify-center">
         <h1 className="text-[10vw] font-extrabold uppercase leading-[0.85] tracking-tighter text-white mb-20">
             GET IN<br/><span className="pl-[10vw]">TOUCH</span>
         </h1>
