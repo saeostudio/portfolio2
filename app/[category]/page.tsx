@@ -1,4 +1,4 @@
-import { getCategory, getCategories } from '@/lib/gallery';
+import { getCategory } from '@/lib/gallery';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CustomCursor from '@/components/CustomCursor';
@@ -17,7 +17,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
   }
 
   return (
-    <main className="min-h-screen p-8 md:p-16">
+    <main id="main-content" className="min-h-screen p-8 md:p-16">
       <CustomCursor />
       <Header />
 
