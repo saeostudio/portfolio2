@@ -11,7 +11,7 @@ export default async function SubjectPage({ params }: { params: Promise<{ subjec
   const decodedSubject = decodeURIComponent(subject);
 
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <CustomCursor />
       <Header />
 
