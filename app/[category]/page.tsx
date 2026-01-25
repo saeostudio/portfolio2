@@ -1,7 +1,6 @@
-import { getCategory, getCategories } from '@/lib/gallery';
+import { getCategory } from '@/lib/gallery';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import CustomCursor from '@/components/CustomCursor';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
@@ -18,10 +17,9 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
 
   return (
     <main className="min-h-screen p-8 md:p-16">
-      <CustomCursor />
       <Header />
 
-      <div className="mt-40 mb-20">
+      <div id="main-content" tabIndex={-1} className="mt-40 mb-20 focus:outline-none">
         <h1 className="text-[8vw] md:text-[6vw] font-extrabold uppercase leading-none tracking-tighter text-white">
             {data.name}
         </h1>
