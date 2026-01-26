@@ -6,6 +6,30 @@ import Footer from '@/components/Footer';
 
 export const dynamic = 'force-dynamic';
 
+const GridItem = ({ category, slotClass, aspectClass, titleStyle = "text-2xl" }: { category?: Category, slotClass: string, aspectClass: string, titleStyle?: string }) => {
+  if (!category) return null;
+  return (
+    <div className={slotClass}>
+      <Link href={`/${category.name}`} className="block group">
+        <div className={`${aspectClass} bg-neutral-900 overflow-hidden mb-4 relative`}>
+           {/* Portal item effect: grayscale to color on hover */}
+           {category.coverImage ? (
+              <Image
+                src={category.coverImage}
+                alt={category.name}
+                fill
+                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+              />
+           ) : (
+               <div className="w-full h-full flex items-center justify-center text-gray-700">No Image</div>
+           )}
+        </div>
+        <div className={`font-syne uppercase ${titleStyle}`}>{category.name}</div>
+      </Link>
+    </div>
+  );
+};
+
 export default async function Home() {
   const categories = await getCategories();
 
@@ -28,32 +52,8 @@ export default async function Home() {
   const analogue = findCategory('analogue');
   const misc = findCategory('miscellaneous');
 
-  const GridItem = ({ category, slotClass, aspectClass, titleStyle = "text-2xl" }: { category?: Category, slotClass: string, aspectClass: string, titleStyle?: string }) => {
-    if (!category) return null;
-    return (
-      <div className={slotClass}>
-        <Link href={`/${category.name}`} className="block group">
-          <div className={`${aspectClass} bg-neutral-900 overflow-hidden mb-4 relative`}>
-             {/* Portal item effect: grayscale to color on hover */}
-             {category.coverImage ? (
-                <Image
-                  src={category.coverImage}
-                  alt={category.name}
-                  fill
-                  className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
-                />
-             ) : (
-                 <div className="w-full h-full flex items-center justify-center text-gray-700">No Image</div>
-             )}
-          </div>
-          <div className={`font-syne uppercase ${titleStyle}`}>{category.name}</div>
-        </Link>
-      </div>
-    );
-  };
-
   return (
-    <main className="min-h-screen p-8 md:p-16">
+    <main id="main-content" tabIndex={-1} className="min-h-screen p-8 md:p-16 focus:outline-none">
       <Header />
 
       <header className="h-[60vh] flex flex-col justify-center mb-20">

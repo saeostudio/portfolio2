@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function About() {
   return (
-    <main className="min-h-screen p-8 md:p-16">
+    <main id="main-content" tabIndex={-1} className="min-h-screen p-8 md:p-16 focus:outline-none">
       <CustomCursor />
       <Header />
 
