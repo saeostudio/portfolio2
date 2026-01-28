@@ -53,7 +53,7 @@ export default async function Home() {
   };
 
   return (
-    <main className="min-h-screen p-8 md:p-16">
+    <main id="main-content" tabIndex={-1} className="min-h-screen p-8 md:p-16 focus:outline-none">
       <Header />
 
       <header className="h-[60vh] flex flex-col justify-center mb-20">
