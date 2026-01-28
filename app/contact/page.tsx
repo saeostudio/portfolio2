@@ -1,11 +1,9 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import CustomCursor from '@/components/CustomCursor';
 
 export default function Contact() {
   return (
-    <main className="min-h-screen p-8 md:p-16">
-      <CustomCursor />
+    <main id="main-content" tabIndex={-1} className="min-h-screen p-8 md:p-16 focus:outline-none">
       <Header />
 
       <div className="min-h-[70vh] flex flex-col justify-center">
