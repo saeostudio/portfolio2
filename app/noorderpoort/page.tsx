@@ -13,7 +13,7 @@ const SUBJECTS = [
 
 export default function Noorderpoort() {
   return (
-    <main className="min-h-screen p-8 md:p-16">
+    <main id="main-content" tabIndex={-1} className="min-h-screen p-8 md:p-16 focus:outline-none">
       <CustomCursor />
       <Header />
 
