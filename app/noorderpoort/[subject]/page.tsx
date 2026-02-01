@@ -1,5 +1,4 @@
 import Header from '@/components/Header';
-import CustomCursor from '@/components/CustomCursor';
 import Link from 'next/link';
 
 // Placeholder for subject gallery.
@@ -12,10 +11,9 @@ export default async function SubjectPage({ params }: { params: Promise<{ subjec
 
   return (
     <main className="min-h-screen">
-      <CustomCursor />
       <Header />
 
-      <div className="pt-32 px-4 md:px-12">
+      <div id="main-content" tabIndex={-1} className="pt-32 px-4 md:px-12 focus:outline-none">
         <div className="flex items-baseline gap-4 mb-12">
             <Link href="/noorderpoort" className="text-xl hover:underline">← Back</Link>
             <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter">{decodedSubject}</h1>
