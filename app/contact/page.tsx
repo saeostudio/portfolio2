@@ -1,14 +1,13 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import CustomCursor from '@/components/CustomCursor';
 
 export default function Contact() {
   return (
     <main className="min-h-screen p-8 md:p-16">
-      <CustomCursor />
       <Header />
 
-      <div className="min-h-[70vh] flex flex-col justify-center">
+      <div id="main-content" tabIndex={-1} className="focus:outline-none">
+        <div className="min-h-[70vh] flex flex-col justify-center">
         <h1 className="text-[10vw] font-extrabold uppercase leading-[0.85] tracking-tighter text-white mb-20">
             GET IN<br/><span className="pl-[10vw]">TOUCH</span>
         </h1>
@@ -31,7 +30,8 @@ export default function Contact() {
         </div>
       </div>
 
-      <Footer />
+        <Footer />
+      </div>
     </main>
   );
 }
