@@ -56,7 +56,7 @@ export default async function Home() {
     <main className="min-h-screen p-8 md:p-16">
       <Header />
 
-      <header className="h-[60vh] flex flex-col justify-center mb-20">
+      <header id="main-content" tabIndex={-1} className="h-[60vh] flex flex-col justify-center mb-20 focus:outline-none">
         <h1 className="text-[8vw] md:text-[10vw] font-extrabold leading-[0.85] tracking-tighter uppercase text-white">
             VISUAL<br/><span className="pl-[10vw]">INDEX</span>
         </h1>
