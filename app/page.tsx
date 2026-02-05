@@ -1,10 +1,33 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { getCategories, Category } from '@/lib/gallery';
-import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export const dynamic = 'force-dynamic';
+
+const GridItem = ({ category, slotClass, aspectClass, titleStyle = "text-2xl" }: { category?: Category, slotClass: string, aspectClass: string, titleStyle?: string }) => {
+  if (!category) return null;
+  return (
+    <div className={slotClass}>
+      <Link href={`/${category.name}`} className="block group">
+        <div className={`${aspectClass} bg-neutral-900 overflow-hidden mb-4 relative`}>
+           {/* Portal item effect: grayscale to color on hover */}
+           {category.coverImage ? (
+              <Image
+                src={category.coverImage}
+                alt={category.name}
+                fill
+                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+              />
+           ) : (
+               <div className="w-full h-full flex items-center justify-center text-gray-700">No Image</div>
+           )}
+        </div>
+        <div className={`font-syne uppercase ${titleStyle}`}>{category.name}</div>
+      </Link>
+    </div>
+  );
+};
 
 export default async function Home() {
   const categories = await getCategories();
@@ -28,34 +51,8 @@ export default async function Home() {
   const analogue = findCategory('analogue');
   const misc = findCategory('miscellaneous');
 
-  const GridItem = ({ category, slotClass, aspectClass, titleStyle = "text-2xl" }: { category?: Category, slotClass: string, aspectClass: string, titleStyle?: string }) => {
-    if (!category) return null;
-    return (
-      <div className={slotClass}>
-        <Link href={`/${category.name}`} className="block group">
-          <div className={`${aspectClass} bg-neutral-900 overflow-hidden mb-4 relative`}>
-             {/* Portal item effect: grayscale to color on hover */}
-             {category.coverImage ? (
-                <Image
-                  src={category.coverImage}
-                  alt={category.name}
-                  fill
-                  className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
-                />
-             ) : (
-                 <div className="w-full h-full flex items-center justify-center text-gray-700">No Image</div>
-             )}
-          </div>
-          <div className={`font-syne uppercase ${titleStyle}`}>{category.name}</div>
-        </Link>
-      </div>
-    );
-  };
-
   return (
-    <main className="min-h-screen p-8 md:p-16">
-      <Header />
-
+    <main id="main-content" tabIndex={-1} className="min-h-screen p-8 md:p-16 outline-none">
       <header className="h-[60vh] flex flex-col justify-center mb-20">
         <h1 className="text-[8vw] md:text-[10vw] font-extrabold leading-[0.85] tracking-tighter uppercase text-white">
             VISUAL<br/><span className="pl-[10vw]">INDEX</span>
